@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <b>LOGIN</b>
+        </div>
+        <div class="card-body p-4">
+
+            <label style="float: left;">Usuario</label>
+            <input class="form-control m-2" type="users" placeholder="Ingrese un Usuario" [(ngModel)]="usuario.email">
+
+            <label style="float: left;">Contraseña</label>
+            <input class="form-control m-2" type="password" placeholder="Ingrese una Contraseña"
+                [(ngModel)]="usuario.password">
+
+            <button class="btn btn-primary btn-block m-2" (click)="Ingresar()">Ingresar</button>
+            <!-- <button class="btn btn-primary" (click)="modal.open(Registro)">Ingresar</button> -->
+            <button class="btn btn-primary" [routerLink]="['home']">Home</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #Registro let-modal>
+    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="ModalRegistroExample"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Username"
+                                        aria-label="Username">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input type="password" class="form-control" placeholder="Password"
+                                        aria-label="Password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="Registrar()">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

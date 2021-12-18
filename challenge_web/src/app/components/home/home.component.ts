@@ -4,18 +4,15 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-  this.route.paramMap.subscribe((paramMap:any) =>{
-    const{params} = paramMap
-    console.log(params.variable)
-  })
+    /*     this.route.paramMap.subscribe((paramMap: any) => {
+      const { params } = paramMap;
+      console.log(params.variable);
+    }); */
   }
-  
-
 }
