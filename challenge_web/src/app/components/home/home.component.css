@@ -1,0 +1,14 @@
+.main{
+    background-image: url(../home/img/home.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: local;
+    position: relative;
+    z-index: 5;
+}
+.title{
+    font-weight: 500;
+}
+btn{
+  padding: 5px;
+}

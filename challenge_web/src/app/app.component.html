@@ -1,3 +1,4 @@
+<router-outlet>  
 <app-navbar></app-navbar>
 <div class="container">
     <div class="card text-center">
@@ -13,11 +14,14 @@
             <input class="form-control m-2" type="password" placeholder="Ingrese una Contraseña" [(ngModel)]="usuario.password">
 
             <button class="btn btn-primary btn-block m-2" (click)="Ingresar()">Ingresar</button>
-            <button class="btn btn-primary" (click)="modal.open(Registro)">Ingresar</button>
-          
+            <!-- <button class="btn btn-primary" (click)="modal.open(Registro)">Ingresar</button> -->
+            <button class="btn btn-primary" [routerLink]="['home']">Home</button>
+
         </div>
     </div>
 </div>
+
+
 
 <ng-template #Registro let-modal>
 <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="ModalRegistroExample" aria-hidden="true">
@@ -52,6 +56,6 @@
   </div>
 </ng-template>
 
-
+</router-outlet>
 
 

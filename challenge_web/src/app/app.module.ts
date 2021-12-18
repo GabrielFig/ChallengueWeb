@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
+import { HomeComponent } from './components/home/home.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyATsNLYgje7WWtOF7D7g1esO37wRqpmXiU",
@@ -22,7 +23,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
