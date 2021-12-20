@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+    if(isset($_SESSION['usuario'])){
+        header("location: torneos.php");
+    }
+ 
+?>
+
 <app-navbar></app-navbar>
 <div class="container">
     <div class="card text-center">
