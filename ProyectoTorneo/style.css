@@ -1,0 +1,13 @@
+h1{
+    font-size: larger;
+    font-style: italic;
+}
+
+.container{
+    background-color: rgba(136, 174, 199, 0.609);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
