@@ -25,6 +25,7 @@
     if($ejecutar){
         echo '
           <script>
+               alert("Usuario registrado");
                window.location="../index.php";
           </script>
         ';
