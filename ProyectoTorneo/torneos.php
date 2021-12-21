@@ -31,13 +31,30 @@
         <form action="php/registro_usuario_be.php" method="POST" class="formulario_registro">
                     <h2>Registrarse</h2>
                     <input type="text"  placeholder="Ingrese un Usuario" name="usua">
-                    <input type="password"  placeholder="Ingrese una Contraseña" name="contra">
+                    <input type="password"  placeholder="Ingrese una Contraseña" name="contra"> 
                     <button>Registrarse</button>
-                       <p> <p> 
+
+                  
+                   <br>
+                    <?php
+                        $query = "SELECT * FROM usuarios ORDER BY rand() LIMIT 2";
+                        $ejecutar = mysqli_query($conexion, $query);
+
+                        while($rows=mysqli_fetch_array($ejecutar)){
+                           echo $rows[1]. "<br>";
+                          
+                        }
+                     ?>
+                  
+                       
         </form>
 
         <form action="php/cerrar_s.php">
                 <button>Cerrer Sesion</button>
+        </form>
+        <form action="mostrar_T.php">
+                <button>Mostrar</button>
+
         </form>
 
 
