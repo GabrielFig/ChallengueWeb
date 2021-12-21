@@ -19,7 +19,7 @@
       else{
           echo '
                 <script>
-                   alert("Usuario no existe, por favor verifique los datos introducidos");
+                   alert("Usuario o Contraseña incorrecta, por favor verifique los datos introducidos");
                    window.location="../index.php";
                 </script>
           ';
