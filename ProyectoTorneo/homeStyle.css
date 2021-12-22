@@ -8,6 +8,30 @@
 .navbar .nav-item .nav-link{
    color: #fff;
 }
+/* ---------------------------------- */
+.usario-content{
+    text-align: center;
+    display: none;
+    background-color: white;
+
+}
+
+.usuario-nb:hover>.usuario-content{
+    display: block;
+}
+.usuario-content>a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+.usuario-content>a:hover{
+    color: white;
+    background-color: rgb(134, 191, 255);
+
+}
+/* ---------------------------------- */
 .main-header{                                      
     position: relative;
     background: url(img/home.png); 
@@ -92,3 +116,8 @@
     width: 200px;
     cursor: pointer;
 }
+
+
+
+/* ------------------------------------------------------- */
+

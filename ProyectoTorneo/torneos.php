@@ -1,5 +1,6 @@
 <?php
    $conexion = mysqli_connect("localhost","root","", "login_register_db");
+   
    session_start();
    if(!isset($_SESSION['usuario'])){
        echo '
@@ -13,6 +14,9 @@
        session_destroy();
        die();
    }
+   $user = $_SESSION['usuario'];
+   $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$user'");
+   $row=mysqli_fetch_row($validar_usuario);
    
 ?>
 
@@ -39,12 +43,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="#Torneo">Torneo</a>
+<!-- --------------------------------------------------------------------------->
+<!--Navbar-->
+
+<!--/.Navbar-->
+
+
+
+          
+
+   <!-- ----------------------------------------------------------------------------- -->  
             </li>
           </ul>
         </div>
      </div>
     </nav>
+    <?php echo "<button class='navbar-brand usuario-nb' href='#'>   $row[1] </button>" ?>
+   <div class="usuario-content">
+       <a href="php/cerrar_s.php">Cerrar Sesion</a>
+   </div>
 <main>
     <header class="main-header">
         <div class="background-overlay text-white py-5">      
