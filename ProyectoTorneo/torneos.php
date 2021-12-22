@@ -1,5 +1,5 @@
 <?php
-   $conexion = mysqli_connect("localhost","root","", "login_register_db");
+   $conexion = mysqli_connect("localhost","root","", "challengueWeb");
    
    session_start();
    if(!isset($_SESSION['usuario'])){
@@ -119,6 +119,7 @@
                             </th>
                         </tr>
                     </thead>
+
 
                     <?php
                         $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");

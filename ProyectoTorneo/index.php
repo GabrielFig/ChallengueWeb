@@ -76,7 +76,7 @@
                     </div>
                 </div>
 
-                <input type="submit" class="form_button" value="Log In">
+                <input type="submit" class="form_button" value="Loggin">
 
                 </div>
             </form>

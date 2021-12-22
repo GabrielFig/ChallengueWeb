@@ -52,6 +52,7 @@
                     <?php
                         // ES EL SELECT DE LA TABLA
                         $sql="SELECT * from equipos";
+
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -60,6 +61,7 @@
                         <tbody>
                             <tr class="table-secondary">
                                 <td><?php echo $mostrar['Nombre_Equipo'] ?></td>      
+
                             </tr>
                         </tbody>  
 
