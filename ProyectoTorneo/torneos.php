@@ -1,5 +1,6 @@
 <?php
-   $conexion = mysqli_connect("localhost","root","", "login_register_db");
+   $conexion = mysqli_connect("localhost","root","", "challengueWeb");
+   
    session_start();
    if(!isset($_SESSION['usuario'])){
        echo '
@@ -13,6 +14,9 @@
        session_destroy();
        die();
    }
+   $user = $_SESSION['usuario'];
+   $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$user'");
+   $row=mysqli_fetch_row($validar_usuario);
    
 ?>
 
@@ -38,13 +42,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="#Torneo">Torneo</a>
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="php/cerrar_s.php">Cerrar Sesion</a>
             </li>
           </ul>
         </div>
      </div>
     </nav>
+    
+   <div class="usuario-content">
+   </div>
 <main>
     <header class="main-header">
         <div class="background-overlay text-white py-5">      
@@ -68,7 +77,7 @@
 
     <secction class="teamr" id="torneo">
         <div class="container">
-        <h3 class="title">Registro de Equipos</h1>
+        <h3 class="title">Registro de Torneo</h1>
 
             <div class="team-form row">
                 <div class="form-field col-md-12">
@@ -84,13 +93,12 @@
                     <label for="fecha" class="label">Fecha de Inicio</label>
                 </div>
                 <div class="form-field col-lg-12">
-                    <input type="submit" class="submit-btn" value="Registrar" name="">
+                    <button class="submit-btn"  onclick="location.href='vistatorneo.php'" name=""> Registrar </button>
                 </div>
             </div>
         </div>
     </secction>
 
-    
 
 </main>
                 
