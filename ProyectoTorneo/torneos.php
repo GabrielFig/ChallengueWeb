@@ -81,25 +81,73 @@
 
             <div class="team-form row">
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" id="name">
-                    <label for="nombreEquipo" class="label">Nombre del Equipo</label>
+                <form action='php/torneos_be.php' method='post' enctype='multipart/form-data'>
+                    <input type="text" class="input-text" name="titulo" id="name">
+                    <label for="nombreEquipo" class="label">Título del Torneo</label>
                 </div>
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" id="categoria">
-                    <label for="nombrecategoria" class="label">categoria</label>
+                    <input type="text" class="input-text" name="categoria" id="categoria">
+                    <label for="nombrecategoria" class="label">categoría</label>
                 </div>
                 <div class="form-field col-md-12">
-                    <input type="date" class="input-text" id="fecha" > 
+                    <input type="date" class="input-text" name="fecha" id="fecha" > 
                     <label for="fecha" class="label">Fecha de Inicio</label>
                 </div>
                 <div class="form-field col-lg-12">
-                    <button class="submit-btn"  onclick="location.href='vistatorneo.php'" name=""> Registrar </button>
+                    <button class="submit-btn"  name=""> Registrar </button>
+                </form>
+                    <button class="submit-btn" onclick="location.href='vistatorneo.php'"  name=""> Ver Equipos </button>
                 </div>
             </div>
         </div>
     </secction>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-hover">
+                    <thead class=thead-dark>
+                        <tr>
+                            <th>
+                                Nombre del Torneo
+                            </th>
+                            <th>
+                                Categoría
+                            </th>
+                            <th>
+                                Fecha de Inicio
+                            </th>
+                        </tr>
+                    </thead>
 
+
+                    <?php
+                        $validar_usuario=mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$user'");
+                        $row=mysqli_fetch_row($validar_usuario);
+                        $query = "SELECT * FROM torneos WHERE Id_usuario = $row[0] ";
+                
+                        $ejecutar = mysqli_query($conexion, $query);
+                
+                        while($row=mysqli_fetch_array($ejecutar)){
+                    ?>
+                        
+                        <tbody>
+                            
+                            <tr class="table-secondary">
+                                <td><?php echo $row[1] ?></td>
+                                <td><?php echo $row[2] ?></td>
+                                <td><?php echo $row[3] ?></td>      
+                            </tr>
+                            
+                        </tbody>  
+
+                    <?php
+                        } 
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
 </main>
                 
             
