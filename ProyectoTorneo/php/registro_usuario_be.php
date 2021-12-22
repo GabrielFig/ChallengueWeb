@@ -4,6 +4,16 @@
     $usuario = $_POST['usuario'];
     $contra = $_POST['contra'];
 
+    if(empty($usuario and $contra)){
+      echo '
+      <script>
+        alert("Introduce caracteres válidos para las credenciales de usuario y contraseña");
+        window.location="../index.php";
+      </script>
+      ';
+      exit();
+    }
+
     $query = "INSERT INTO usuarios(usuario, contra) 
             VALUES('$usuario', '$contra')";
 
@@ -19,12 +29,13 @@
         exit();
       }
 
-
+    
     $ejecutar = mysqli_query($conexion, $query);
 
     if($ejecutar){
         echo '
           <script>
+               alert("Usuario registrado");
                window.location="../index.php";
           </script>
         ';
