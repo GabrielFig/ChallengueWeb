@@ -21,12 +21,12 @@
     
     <secction class="teamr" id="equipo">
         <div class="container">
-        <form action="" method="POST" class="form_content">
+        <form action='php/equipos_be.php' method="POST" class="form_content">
         <h3 class="title">Registro de Equipo</h1>
 
             <div class="team-form row">
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" id="name">
+                    <input type="text" class="input-text" id="name" name="name">
                     <label for="nombreEquipo" class="label">Nombre del Equipo</label>
                 </div>
                 <div class="form-field col-lg-12">
@@ -51,7 +51,7 @@
 
                     <?php
                         // ES EL SELECT DE LA TABLA
-                        $sql="SELECT * from usuarios";
+                        $sql="SELECT * from equipos";
                         $result=mysqli_query($conexion,$sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
@@ -59,7 +59,7 @@
                         
                         <tbody>
                             <tr class="table-secondary">
-                                <td><?php echo $mostrar['usuario'] ?></td>      
+                                <td><?php echo $mostrar['Nombre_Equipo'] ?></td>      
                             </tr>
                         </tbody>  
 
@@ -73,7 +73,7 @@
 
 
     <div class="container mt-5 text-center justify-content-center align-self-center">
-          <button class="btn-enfren btn-lg"  onclick="location.href='index.php'" name=""> Empezar Enfrentamientos </button>
+          <button class="btn-enfren btn-lg"  onclick="location.href='mostrar_T.php'" name=""> Empezar Enfrentamientos </button>
         </div>
     </div>
 

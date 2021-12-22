@@ -26,7 +26,7 @@
                
                 while($rows=mysqli_fetch_array($ejecutar)){
                      
-                        if("SELECT * FROM sorteados WHERE usuarios= $row[1]"){
+                        if("SELECT * FROM sorteados WHERE usuarios= $rows[1]"){
                             
                         }
                     $cant1 = $contador2+=1;
