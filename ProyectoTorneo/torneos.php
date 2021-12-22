@@ -81,19 +81,21 @@
 
             <div class="team-form row">
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" id="name">
-                    <label for="nombreEquipo" class="label">Nombre del Equipo</label>
+                <form action='php/torneos_be.php' method='post' enctype='multipart/form-data'>
+                    <input type="text" class="input-text" name="titulo" id="name">
+                    <label for="nombreEquipo" class="label">Título del Torneo</label>
                 </div>
                 <div class="form-field col-md-12">
-                    <input type="text" class="input-text" id="categoria">
-                    <label for="nombrecategoria" class="label">categoria</label>
+                    <input type="text" class="input-text" name="categoria" id="categoria">
+                    <label for="nombrecategoria" class="label">categoría</label>
                 </div>
                 <div class="form-field col-md-12">
-                    <input type="date" class="input-text" id="fecha" > 
+                    <input type="date" class="input-text" name="fecha" id="fecha" > 
                     <label for="fecha" class="label">Fecha de Inicio</label>
                 </div>
                 <div class="form-field col-lg-12">
-                    <button class="submit-btn"  onclick="location.href='vistatorneo.php'" name=""> Registrar </button>
+                    <button class="submit-btn"  name=""> Registrar </button>
+                </form>
                 </div>
             </div>
         </div>

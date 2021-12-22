@@ -1,7 +1,7 @@
 <?php
 
-
-    $conexion = mysqli_connect("localhost","root","", "challengueweb");
+    include 'php/conexion_be.php';
+   // $conexion = mysqli_connect("localhost","root","", "challengueweb");
 
 ?>
 
