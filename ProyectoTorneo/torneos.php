@@ -1,6 +1,6 @@
 <?php
-   $conexion = mysqli_connect("localhost","root","", "challengueWeb");
-   
+   //$conexion = mysqli_connect("localhost","root","", "challengueWeb");
+   include 'php/conexion_be.php';
    session_start();
    if(!isset($_SESSION['usuario'])){
        echo '
@@ -117,6 +117,10 @@
                             <th>
                                 Fecha de Inicio
                             </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
                         </tr>
                     </thead>
 
@@ -136,7 +140,9 @@
                             <tr class="table-secondary">
                                 <td><?php echo $row[1] ?></td>
                                 <td><?php echo $row[2] ?></td>
-                                <td><?php echo $row[3] ?></td>      
+                                <td><?php echo $row[3] ?></td>
+                                <td><button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_torneo.php?<?php echo $row[0]?>'">Borrar</button></td>
+                                <td><button type="button" class="btn btn-success" onclick="location.href='vistatorneo.php?<?php echo $row[0]?>'">Ver</button></td>            
                             </tr>
                             
                         </tbody>  

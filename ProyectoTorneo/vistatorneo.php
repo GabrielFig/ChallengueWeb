@@ -21,7 +21,7 @@
     
     <secction class="teamr" id="equipo">
         <div class="container">
-        <form action='php/equipos_be.php' method="POST" class="form_content">
+        <form action='php/equipos_be.php?<?php echo $_SERVER['QUERY_STRING']?>' method="POST" class="form_content"> 
         <h3 class="title">Registro de Equipo</h1>
 
             <div class="team-form row">
@@ -46,21 +46,24 @@
                             <th>
                                 Nombre del Equipo
                             </th>
+                            <th>
+                            </th>
                         </tr>
                     </thead>
 
                     <?php
                         // ES EL SELECT DE LA TABLA
-                        $sql="SELECT * from equipos";
+                        $sql="SELECT * from equipos WHERE equipos.Id_Torneo = ${_SERVER['QUERY_STRING']}";
 
-                        $result=mysqli_query($conexion,$sql);
+                        $result=mysqli_query($conexion, $sql);
 
                         while($mostrar=mysqli_fetch_array($result)){
                     ?>
                         
                         <tbody>
                             <tr class="table-secondary">
-                                <td><?php echo $mostrar['Nombre_Equipo'] ?></td>      
+                                <td><?php echo $mostrar['Nombre_Equipo'] ?></td>
+                                <td><button type="button" class="btn btn-danger" onclick="location.href='php/eliminar_equipo.php?<?php echo $mostrar['id']?>?<?php echo $_SERVER['QUERY_STRING']?>'">Borrar</button></td>      
 
                             </tr>
                         </tbody>  
@@ -75,7 +78,7 @@
 
 
     <div class="container mt-5 text-center justify-content-center align-self-center">
-          <button class="btn-enfren btn-lg"  onclick="location.href='mostrar_T.php'" name=""> Empezar Enfrentamientos </button>
+          <button class="btn-enfren btn-lg"  onclick="location.href='mostrar_T.php?<?php echo $_SERVER['QUERY_STRING']?>'" name=""> Empezar Enfrentamientos </button>
         </div>
     </div>
 

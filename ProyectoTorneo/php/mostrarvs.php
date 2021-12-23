@@ -10,7 +10,7 @@
     }  */
 
     if($conexion){
-        $query = "SELECT * FROM usuarios";
+        $query = "SELECT * FROM equipos";
         $datos = mysqli_query($conexion, $query);
          if($datos->num_rows>0){
                $contador = 0;
@@ -20,13 +20,13 @@
                 
                 } 
 
-                $query = "SELECT * FROM usuarios ORDER BY rand() LIMIT $cant";
+                $query = "SELECT * FROM equipos ORDER BY rand() LIMIT $cant";
                 $ejecutar = mysqli_query($conexion, $query);
                 $contador2 = 0;
                
                 while($rows=mysqli_fetch_array($ejecutar)){
                      
-                  if("SELECT * FROM sorteados WHERE usuarios= $row[1]"){
+                  if("SELECT * FROM sorteados WHERE equipos= $rows[1]"){
 
                             
                         }
