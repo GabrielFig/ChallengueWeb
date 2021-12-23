@@ -8,13 +8,20 @@
     <!-- Bootstrap CSS -->
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleTabla.css">
+    <link rel="stylesheet" href="homeStyle.css">
     <title>Hello, world!</title>
   </head>
-  
+  <secction class="teamr" id="equipo">
+        <div class="container">
+        <form action='php/equipos_be.php' method="POST" class="form_content">
+          <h3 class="title">Registro de Equipo</h1>
+
+        </form>
+        </div>
+    </secction>
   <body>
     <div class="container">
-                <table class="table table-dark table-hover mt-5">
+                <table class="table table-dark table-hover mt-2">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -31,11 +38,16 @@
             </table>
     <div>
 
+    <secction class="teamr" id="equipo">
+        <div class="container">
+        <form action='php/equipos_be.php' method="POST" class="form_content">
+          <h3 class="title">VS</h1>
+
+        </form>
+        </div>
+    </secction>
     <div class="container">
-        <h1>VS</h1>
-    </div>
-    <div class="container">
-                <table class="table table-dark table-hover mt-5">
+                <table class="table table-dark table-hover mt-2">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -51,6 +63,9 @@
             </tbody>
             </table>
     <div>
+
+    <img src="img/Espadas.png" alt=""
+                        class="img-fluid rounded mx-auto d-block" style="width: 20%;">
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

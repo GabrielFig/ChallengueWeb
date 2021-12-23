@@ -1,5 +1,4 @@
 <?php
-   //$conexion = mysqli_connect("localhost","root","", "challengueWeb");
    include 'php/conexion_be.php';
    session_start();
    if(!isset($_SESSION['usuario'])){
