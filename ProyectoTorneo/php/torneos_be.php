@@ -44,7 +44,7 @@
     echo '
         <script>
         alert("Torneo registrado con éxito");
-        window.location="../vistatorneo.php";
+        window.location="../torneos.php";
        </script>
 
         ';

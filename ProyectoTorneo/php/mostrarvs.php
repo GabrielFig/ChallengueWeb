@@ -26,10 +26,6 @@
                
                 while($rows=mysqli_fetch_array($ejecutar)){
                      
-                /*   if("SELECT * FROM sorteados WHERE usuarios= $row[1]"){
-
-                            
-                        } */
                     $cant1 = $contador2+=1;
                     $ide = $rows[0];
                     $usuario = $rows[1];

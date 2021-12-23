@@ -13,9 +13,8 @@ if (empty($nombre)) {
     ';
     exit();
 }
-
     $query = "INSERT INTO equipos(Nombre_Equipo,Id_Torneo) 
-    VALUES('$nombre',23)";
+    VALUES('$nombre', ${_SERVER['QUERY_STRING']})";
 
     $ejecutar = mysqli_query($conexion, $query);
 
@@ -23,18 +22,16 @@ if (empty($nombre)) {
 
     $ejecutar = mysqli_query($conexion, $query);
 
-    while($rows=mysqli_fetch_array($ejecutar)){
-        echo "<input type='text' value='$rows[1]' disabled><br><br>"; 
-        }
-
-
+    // while($rows=mysqli_fetch_array($ejecutar)){
+    //     echo "<input type='text' value='$rows[1]' disabled><br><br>"; 
+    //     }
+    $ruta = "http://localhost/ProyectoTorneo/vistatorneo.php?${_SERVER['QUERY_STRING']}";
     echo '
         <script>
         alert("Equipo registrado con éxito");
-        window.location="../vistatorneo.php";
        </script>
-
         ';
+    header("Location: $ruta");
 
     /* echo'
         <script>
